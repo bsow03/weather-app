@@ -8,7 +8,7 @@ import ttkbootstrap
 
 # Function to get weather from API
 def get_weather(city):
-    api_key = "8c2a28ad0d8b2fa43731ba4f56de788e"
+    api_key = "" #INPUT YOUR API KEY FROM OPENWEATHER HERE, ONCE INPUT RUN CODE
     api_url = "https://api.openweathermap.org/data/2.5/weather"
     url=api_url
     params={
