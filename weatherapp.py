@@ -1,15 +1,10 @@
+#Weather App V1
 # import statements
 import tkinter as tk
 import requests
 from tkinter import messagebox
 from PIL import Image, ImageTk
 import ttkbootstrap
-from datetime import datetime
-
-# Function for time format at location
-def time_format_for_location(utc_with_tz):
-    local_time = datetime.utcfromtimestamp(utc_with_tz)
-    return local_time.time()
 
 # Function to get weather from API
 def get_weather(city):
@@ -34,18 +29,6 @@ def get_weather(city):
     city = weather['name']
     country = weather['sys']['country']
     forecast = weather['weather'][0]['main'].lower()
-    
-    #feels_like_temp = int(weather['main']['feels_like'])
-    #pressure = weather['main']['pressure']
-    #humidity = weather['main']['humidity']
-    #wind_speed = weather['wind']['speed'] * 3.6
-    #sunrise = weather['sys']['sunrise']
-    #sunset = weather['sys']['sunset']
-    #timezone = weather['timezone']
-    #cloudy = weather['clouds']['all']
-
-    #sunrise_time = time_format_for_location(sunrise + timezone)
-    #sunset_time = time_format_for_location(sunset + timezone)
 
     # Get the icon URL and return all the weather information
     icon_url = f"https://openweathermap.org/img/wn/{icon_id}@2x.png"
